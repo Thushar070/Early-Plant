@@ -122,7 +122,7 @@ export default function AlertsPage() {
                         </span>
                         <span className="flex items-center gap-1">
                           <Target className="w-3.5 h-3.5" />
-                          {alert.confidence}% confidence
+                          {alert.confidence}% example confidence
                         </span>
                       </div>
                     </div>

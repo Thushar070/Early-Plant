@@ -1,0 +1,20 @@
+{
+  "species": "tobacco",
+  "n_plants": 63,
+  "baseline_run": "tobacco_dry_vs_cut_20261025_161111_utc",
+  "candidate_run": "tobacco_dry_vs_cut_gpu_20261025_165610_utc",
+  "baseline_plant_macro_f1": 0.7142137096774194,
+  "candidate_plant_macro_f1": 0.6398128898128899,
+  "paired_bootstrap": {
+    "repetitions": 20000,
+    "seed": 42,
+    "delta_macro_f1_candidate_minus_logistic": -0.07440081986452951,
+    "percentile_95_interval": [
+      -0.2095244286605843,
+      0.05840552177829364
+    ],
+    "interpretation": "Plant-resampled paired interval; sampling uncertainty only, not analyst model-selection uncertainty."
+  },
+  "fold_grouping_matches": true,
+  "caveat": "Nested OOF predictions are plant-grouped and compared on identical folds. Results remain exploratory because the dataset and folds have been used for prior model iteration."
+}

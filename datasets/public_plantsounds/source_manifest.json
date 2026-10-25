@@ -1,0 +1,17 @@
+{
+  "source": "Dryad, Recorded plant sounds from: Sounds emitted by plants under stress are airborne and informative",
+  "doi": "10.5061/dryad.jwstqjqf7",
+  "download_url": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.jwstqjqf7/download",
+  "license_basis": "Dryad states its datasets are published under CC0; cite the dataset as scholarly courtesy.",
+  "archive_sha256": "5134d53a9d5e8d225bfa1c31d13d0c7f9da09b4c9edb9749168aa9a2ef0a1b63",
+  "archive_bytes": 10003060,
+  "wav_files_extracted": 5477,
+  "source_category_rows": 5477,
+  "metadata_csv": "metadata.csv",
+  "sample_details_from_source": "2 ms WAV, 500 kHz",
+  "acquired_utc": "2026-10-25T16:00:43.340910+00:00",
+  "plant_id_source": "The supplied Dryad README documents id_<plant_id>_sound_<sound_id>.wav filenames; plant IDs are parsed from the source filename for plant folders. Control IDs are stored as recording_instance_id.",
+  "session_ids_provided": false,
+  "source_readme_sha256": "2e5c7c4b47f967d8a0ef073a0faa39a793ce5689fd0f618bbf7907a5451871ba",
+  "next_step": "Review the generated metadata template and keep session_id blank unless a source-backed session identifier is available. Plant-grouped evaluation uses plant_id."
+}

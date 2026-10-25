@@ -43,7 +43,7 @@ export default function LandingPage() {
         <div className="text-center flex flex-col items-center mb-12 pt-6 md:pt-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-100/90 border border-sage-200 text-xs font-medium text-sage-700 mb-6 shadow-xs">
             <Activity className="w-3.5 h-3.5 text-sage-600 animate-pulse" />
-            <span>Ultrasonic Acoustic Sensing (20–150 kHz)</span>
+            <span>Research prototype · sample audio experiments</span>
           </div>
 
           <div className="flex items-center justify-center space-x-3.5 mb-4">
@@ -56,12 +56,12 @@ export default function LandingPage() {
           </div>
 
           <h2 className="text-lg md:text-2xl font-semibold text-sage-700 max-w-2xl mb-4">
-            Early Plant Stress Detection Using Ultrasonic Signals
+            Exploring Plant-Stress Classification from Audio
           </h2>
 
           <div className="bg-white/80 border border-sage-200/80 px-6 py-3 rounded-xl shadow-xs mb-8">
             <p className="text-base md:text-lg font-medium text-sage-800 italic">
-              &ldquo;Detect plant stress before visible symptoms appear.&rdquo;
+              &ldquo;A research prototype for exploring plant-related acoustic signals.&rdquo;
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function LandingPage() {
             <span className="w-1.5 h-7 bg-sage-600 rounded-full animate-pulse [animation-delay:300ms]" />
             <span className="w-1.5 h-4 bg-mint-500 rounded-full animate-pulse [animation-delay:450ms]" />
             <span className="w-1.5 h-2 bg-sage-400 rounded-full animate-pulse [animation-delay:600ms]" />
-            <span className="ml-2 font-mono text-[11px] tracking-wider text-sage-500">Continuous Micro-Cavitation Listening</span>
+            <span className="ml-2 font-mono text-[11px] tracking-wider text-sage-500">Illustrative audio concept · no sensor connected</span>
           </div>
 
           {/* CTA Section */}
@@ -106,9 +106,9 @@ export default function LandingPage() {
                 <Sprout className="w-6 h-6" />
               </div>
               <div className="text-[11px] font-bold text-sage-500 uppercase tracking-wider mb-1">Step 1</div>
-              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">Plant emits ultrasonic signals</h4>
+              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">Plant-related audio is recorded</h4>
               <p className="text-xs text-sage-600 leading-relaxed">
-                Stressed xylem vessels generate high-frequency acoustic cavitation clicks before visual wilting occurs.
+                The project explores whether recorded acoustic signals may contain patterns associated with plant stress.
               </p>
             </div>
 
@@ -118,9 +118,9 @@ export default function LandingPage() {
                 <Radio className="w-6 h-6" />
               </div>
               <div className="text-[11px] font-bold text-sage-500 uppercase tracking-wider mb-1">Step 2</div>
-              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">Sensor captures the acoustic signal</h4>
+              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">Sample audio is represented</h4>
               <p className="text-xs text-sage-600 leading-relaxed">
-                High-sensitivity acoustic contact and near-field sensors record raw ultrasonic waveforms in real time.
+                The current prototype uses a local sample dataset. No sensor or live recording is connected.
               </p>
             </div>
 
@@ -130,9 +130,9 @@ export default function LandingPage() {
                 <Brain className="w-6 h-6" />
               </div>
               <div className="text-[11px] font-bold text-sage-500 uppercase tracking-wider mb-1">Step 3</div>
-              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">AI analyzes the signal</h4>
+              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">ML experiments analyze audio</h4>
               <p className="text-xs text-sage-600 leading-relaxed">
-                Acoustic feature algorithms extract frequency distribution, burst rates, and signal patterns.
+                ML experiments transform audio into features such as log-Mel spectrograms.
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export default function LandingPage() {
               <div className="text-[11px] font-bold text-sage-500 uppercase tracking-wider mb-1">Step 4</div>
               <h4 className="font-semibold text-sage-800 text-sm mb-1.5">Stress pattern is classified</h4>
               <p className="text-xs text-sage-600 leading-relaxed">
-                Determines specific stress condition—drought, temperature extremes, or physical disturbance.
+                Research experiments compare five target classes; current validation performance is low.
               </p>
             </div>
 
@@ -154,9 +154,9 @@ export default function LandingPage() {
                 <BellRing className="w-6 h-6" />
               </div>
               <div className="text-[11px] font-bold text-sage-500 uppercase tracking-wider mb-1">Step 5</div>
-              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">User receives an alert and suggested action</h4>
+              <h4 className="font-semibold text-sage-800 text-sm mb-1.5">Prototype displays sample alerts</h4>
               <p className="text-xs text-sage-600 leading-relaxed">
-                Clear alert delivered with confidence level and practical farm management recommendations.
+                The dashboard shows illustrative sample alerts and recommendations, not verified predictions.
               </p>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function LandingPage() {
         {/* Footer Area */}
         <footer className="mt-auto pt-6 pb-4 border-t border-sage-200 w-full text-center">
           <p className="text-xs text-sage-500 font-medium">
-            © 2024 PlantSense AI — Early Plant Stress Detection Using Ultrasonic Signals
+            © 2026 PlantSense AI — Research prototype with illustrative sample data
           </p>
         </footer>
       </div>

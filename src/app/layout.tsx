@@ -3,8 +3,8 @@ import './globals.css';
 import { AppProvider } from '@/components/AppProvider';
 
 export const metadata: Metadata = {
-  title: 'PlantSense AI — Early Plant Stress Detection',
-  description: 'Detect plant stress before visible symptoms appear using ultrasonic signals and AI.',
+  title: 'PlantSense AI — Research Prototype',
+  description: 'Research prototype exploring machine-learning experiments on plant-related audio.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

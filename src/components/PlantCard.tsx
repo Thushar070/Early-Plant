@@ -80,7 +80,7 @@ export function PlantCard({ plant }: PlantCardProps) {
             {/* Health Score Bar */}
             <div className="mt-3">
               <div className="flex items-center justify-between text-xs mb-1">
-                <span className="text-sage-500 font-medium">Health Score</span>
+                <span className="text-sage-500 font-medium">Sample health score</span>
                 <span className="font-semibold text-sage-700">{plant.healthScore}</span>
               </div>
               <div className="w-full bg-sage-100 rounded-full h-1.5">

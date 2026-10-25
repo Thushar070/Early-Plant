@@ -1,0 +1,36 @@
+{
+  "selected": {
+    "title": "Recorded plant sounds from: Sounds emitted by plants under stress are airborne and informative",
+    "authors": "Khait et al.",
+    "year": 2023,
+    "doi": "10.5061/dryad.jwstqjqf7",
+    "landing_page": "https://datadryad.org/dataset/doi:10.5061/dryad.jwstqjqf7",
+    "download_api": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.jwstqjqf7/download",
+    "license": "CC0 1.0 (Dryad dataset policy)",
+    "recording_format": "WAV event clips, 2 ms, 500 kHz",
+    "source_categories": ["Dry Tomato", "Dry Tobacco", "Cut Tomato", "Cut Tobacco", "Empty Pot", "Greenhouse Noises"],
+    "group_identifiers_confirmed_in_user_supplied_readme": true,
+    "group_identifier_format": "id_<plant_id>_sound_<sound_id>.wav; controls use the ID for a recording instance",
+    "training_task": "dry versus cut within one species, conditional on obtaining verified plant/session IDs"
+  },
+  "screened_but_not_selected": [
+    {
+      "title": "Plant Sound Dataset: Dry vs Water",
+      "url": "https://huggingface.co/datasets/NonSittinon/plant-sounds",
+      "license": "MIT (dataset card)",
+      "reason_not_used": "Only 10 audio rows are published and the dataset card does not establish plant/session IDs or detailed treatment provenance. Too small and under-described for defensible grouped training."
+    },
+    {
+      "title": "PlantLeaf ultrasonic recordings",
+      "url": "https://plantleaf.it/audio.html",
+      "license": "No raw-data license or bulk download was located on the accessible project pages; the desktop software has a separate AGPLv3 license.",
+      "reason_not_used": "The project describes over 150 sessions and extensive event annotation but does not provide an accessible public raw-recording archive on the pages reviewed. Do not confuse software licensing with data licensing."
+    },
+    {
+      "title": "Plant Ultrasound Atlas",
+      "url": "https://pua.webs.upv.es/",
+      "license": "Not verified",
+      "reason_not_used": "The public site could not be inspected reliably in this session; no accessible licensed download was confirmed."
+    }
+  ]
+}

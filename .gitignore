@@ -2,6 +2,11 @@
 
 # dependencies
 /node_modules
+/.venv-plantgpu
+/.pip-cache
+/.pip-tmp
+/.venv/
+/.venv-*/
 /.pnp
 .pnp.*
 .yarn/*
@@ -30,8 +35,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (keep examples safe to commit)
 .env*
+!.env.example
+!.env.*.example
 
 # vercel
 .vercel
@@ -39,3 +46,31 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python caches and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local datasets and source recordings. Keep dataset documentation,
+# metadata, and manifests visible to Git for reproducibility.
+/datasets/plant_sounds/
+/datasets/public_plantsounds/raw/
+/datasets/public_plantsounds/PlantSounds.zip
+/datasets/plant_stress_sound_dataset.csv
+/train.csv
+/val.csv
+/test.csv
+
+# Generated ML features, training histories, and checkpoints. Experiment
+# reports/configs remain trackable unless they contain model binaries.
+/ml/outputs/
+/ml/models/**/*.joblib
+/ml/models/**/*.pt
+/ml/models/**/*.pth
+/ml/models/**/*.ckpt
+/ml/models/**/*.safetensors
+/ml/experiments/**/selected_model.joblib

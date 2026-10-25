@@ -1,0 +1,599 @@
+{
+  "task": "dry versus cut acoustic event classification",
+  "species": "tobacco",
+  "source_doi": "10.5061/dryad.jwstqjqf7",
+  "source_archive_sha256": "5134d53a9d5e8d225bfa1c31d13d0c7f9da09b4c9edb9749168aa9a2ef0a1b63",
+  "metadata_csv_sha256": "e0ffdae6513bf2341881c350ac139a35eb1e55019ffbb557802506378fd0479a",
+  "evaluation_status": "Exploratory nested GPU model development on previously inspected plant cohorts. Mean-probability aggregation was motivated by an earlier exploratory look at these same outer folds; rerunning nested tuning does not erase that analyst-selection bias. Validate a frozen method on new plants, sites, and recording sessions.",
+  "class_names": [
+    "dry",
+    "cut"
+  ],
+  "n_events": 781,
+  "n_unique_plants": 63,
+  "split_method": "Nested StratifiedGroupKFold outer=5, inner=3",
+  "plant_aggregation": "mean event probability; inner candidate selection and early stopping use the same aggregation",
+  "device": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+  "torch_version": "2.6.0+cu124",
+  "cuda_version": "12.4",
+  "candidate_grid": [
+    {
+      "name": "welch_mlp_64",
+      "feature_version": "welch32",
+      "hidden": 64,
+      "dropout": 0.15,
+      "lr": 0.001,
+      "weight_decay": 0.001
+    },
+    {
+      "name": "welch_mlp_128",
+      "feature_version": "welch32",
+      "hidden": 128,
+      "dropout": 0.25,
+      "lr": 0.001,
+      "weight_decay": 0.001
+    },
+    {
+      "name": "welch_mlp_128_slow",
+      "feature_version": "welch32",
+      "hidden": 128,
+      "dropout": 0.35,
+      "lr": 0.0004,
+      "weight_decay": 0.01
+    },
+    {
+      "name": "rich_mlp_64",
+      "feature_version": "rich96_envelope",
+      "hidden": 64,
+      "dropout": 0.15,
+      "lr": 0.001,
+      "weight_decay": 0.001
+    },
+    {
+      "name": "rich_mlp_128",
+      "feature_version": "rich96_envelope",
+      "hidden": 128,
+      "dropout": 0.25,
+      "lr": 0.001,
+      "weight_decay": 0.001
+    },
+    {
+      "name": "rich_mlp_128_slow",
+      "feature_version": "rich96_envelope",
+      "hidden": 128,
+      "dropout": 0.35,
+      "lr": 0.0004,
+      "weight_decay": 0.01
+    }
+  ],
+  "outer_fold_details": [
+    {
+      "fold": 1,
+      "selected_config": {
+        "name": "rich_mlp_128",
+        "feature_version": "rich96_envelope",
+        "hidden": 128,
+        "dropout": 0.25,
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "inner_plant_macro_f1": 0.8416149068322981,
+        "inner_best_epochs": [
+          27,
+          32,
+          39
+        ]
+      },
+      "refit_epochs": 32,
+      "validation_plants": 12,
+      "top_inner_candidates": [
+        {
+          "name": "rich_mlp_128",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.8416149068322981,
+          "inner_best_epochs": [
+            27,
+            32,
+            39
+          ]
+        },
+        {
+          "name": "rich_mlp_64",
+          "feature_version": "rich96_envelope",
+          "hidden": 64,
+          "dropout": 0.15,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.7646153846153847,
+          "inner_best_epochs": [
+            26,
+            26,
+            4
+          ]
+        },
+        {
+          "name": "rich_mlp_128_slow",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.7624223602484472,
+          "inner_best_epochs": [
+            69,
+            14,
+            1
+          ]
+        },
+        {
+          "name": "welch_mlp_128_slow",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.724537037037037,
+          "inner_best_epochs": [
+            10,
+            12,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "selected_config": {
+        "name": "rich_mlp_128",
+        "feature_version": "rich96_envelope",
+        "hidden": 128,
+        "dropout": 0.25,
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "inner_plant_macro_f1": 0.8528793610760823,
+        "inner_best_epochs": [
+          3,
+          39,
+          7
+        ]
+      },
+      "refit_epochs": 7,
+      "validation_plants": 13,
+      "top_inner_candidates": [
+        {
+          "name": "rich_mlp_128",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.8528793610760823,
+          "inner_best_epochs": [
+            3,
+            39,
+            7
+          ]
+        },
+        {
+          "name": "rich_mlp_128_slow",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.8498498498498499,
+          "inner_best_epochs": [
+            9,
+            54,
+            16
+          ]
+        },
+        {
+          "name": "welch_mlp_128",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.7582417582417582,
+          "inner_best_epochs": [
+            20,
+            22,
+            29
+          ]
+        },
+        {
+          "name": "welch_mlp_64",
+          "feature_version": "welch32",
+          "hidden": 64,
+          "dropout": 0.15,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.732620320855615,
+          "inner_best_epochs": [
+            7,
+            16,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "selected_config": {
+        "name": "rich_mlp_128",
+        "feature_version": "rich96_envelope",
+        "hidden": 128,
+        "dropout": 0.25,
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "inner_plant_macro_f1": 0.8253079507278835,
+        "inner_best_epochs": [
+          38,
+          7,
+          34
+        ]
+      },
+      "refit_epochs": 34,
+      "validation_plants": 11,
+      "top_inner_candidates": [
+        {
+          "name": "rich_mlp_128",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.8253079507278835,
+          "inner_best_epochs": [
+            38,
+            7,
+            34
+          ]
+        },
+        {
+          "name": "rich_mlp_128_slow",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.784557438794727,
+          "inner_best_epochs": [
+            33,
+            19,
+            53
+          ]
+        },
+        {
+          "name": "welch_mlp_128_slow",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.7692307692307693,
+          "inner_best_epochs": [
+            3,
+            19,
+            1
+          ]
+        },
+        {
+          "name": "welch_mlp_128",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.768888888888889,
+          "inner_best_epochs": [
+            1,
+            16,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "selected_config": {
+        "name": "rich_mlp_128",
+        "feature_version": "rich96_envelope",
+        "hidden": 128,
+        "dropout": 0.25,
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "inner_plant_macro_f1": 0.7421052631578948,
+        "inner_best_epochs": [
+          9,
+          2,
+          26
+        ]
+      },
+      "refit_epochs": 9,
+      "validation_plants": 14,
+      "top_inner_candidates": [
+        {
+          "name": "rich_mlp_128",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.7421052631578948,
+          "inner_best_epochs": [
+            9,
+            2,
+            26
+          ]
+        },
+        {
+          "name": "rich_mlp_64",
+          "feature_version": "rich96_envelope",
+          "hidden": 64,
+          "dropout": 0.15,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.7342511472674176,
+          "inner_best_epochs": [
+            17,
+            34,
+            5
+          ]
+        },
+        {
+          "name": "welch_mlp_128",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.692652329749104,
+          "inner_best_epochs": [
+            21,
+            4,
+            2
+          ]
+        },
+        {
+          "name": "rich_mlp_128_slow",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.6847426470588236,
+          "inner_best_epochs": [
+            22,
+            4,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "fold": 5,
+      "selected_config": {
+        "name": "welch_mlp_128",
+        "feature_version": "welch32",
+        "hidden": 128,
+        "dropout": 0.25,
+        "lr": 0.001,
+        "weight_decay": 0.001,
+        "inner_plant_macro_f1": 0.8572011423908609,
+        "inner_best_epochs": [
+          19,
+          17,
+          13
+        ]
+      },
+      "refit_epochs": 17,
+      "validation_plants": 13,
+      "top_inner_candidates": [
+        {
+          "name": "welch_mlp_128",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.8572011423908609,
+          "inner_best_epochs": [
+            19,
+            17,
+            13
+          ]
+        },
+        {
+          "name": "rich_mlp_128",
+          "feature_version": "rich96_envelope",
+          "hidden": 128,
+          "dropout": 0.25,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.8397435897435898,
+          "inner_best_epochs": [
+            12,
+            15,
+            34
+          ]
+        },
+        {
+          "name": "rich_mlp_64",
+          "feature_version": "rich96_envelope",
+          "hidden": 64,
+          "dropout": 0.15,
+          "lr": 0.001,
+          "weight_decay": 0.001,
+          "inner_plant_macro_f1": 0.8199279711884754,
+          "inner_best_epochs": [
+            7,
+            13,
+            27
+          ]
+        },
+        {
+          "name": "welch_mlp_128_slow",
+          "feature_version": "welch32",
+          "hidden": 128,
+          "dropout": 0.35,
+          "lr": 0.0004,
+          "weight_decay": 0.01,
+          "inner_plant_macro_f1": 0.7777777777777778,
+          "inner_best_epochs": [
+            2,
+            10,
+            35
+          ]
+        }
+      ]
+    }
+  ],
+  "fold_heldout_plant_ids": {
+    "1": [
+      "11",
+      "14",
+      "159",
+      "163",
+      "166",
+      "170",
+      "173",
+      "7",
+      "75",
+      "79",
+      "85",
+      "86"
+    ],
+    "2": [
+      "127",
+      "139",
+      "15",
+      "152",
+      "158",
+      "169",
+      "171",
+      "172",
+      "21",
+      "3",
+      "73",
+      "77",
+      "78"
+    ],
+    "3": [
+      "13",
+      "131",
+      "141",
+      "151",
+      "153",
+      "19",
+      "31",
+      "8",
+      "82",
+      "88",
+      "89"
+    ],
+    "4": [
+      "1",
+      "126",
+      "128",
+      "130",
+      "140",
+      "154",
+      "155",
+      "165",
+      "23",
+      "29",
+      "80",
+      "81",
+      "87",
+      "9"
+    ],
+    "5": [
+      "10",
+      "129",
+      "156",
+      "157",
+      "16",
+      "161",
+      "167",
+      "2",
+      "25",
+      "27",
+      "5",
+      "74",
+      "83"
+    ]
+  },
+  "fold_feature_version": {
+    "1": "rich96_envelope",
+    "2": "rich96_envelope",
+    "3": "rich96_envelope",
+    "4": "rich96_envelope",
+    "5": "welch32"
+  },
+  "final_model_config": {
+    "name": "rich_mlp_128",
+    "feature_version": "rich96_envelope",
+    "hidden": 128,
+    "dropout": 0.25,
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "inner_plant_macro_f1": 0.8416149068322981,
+    "inner_best_epochs": [
+      27,
+      32,
+      39
+    ]
+  },
+  "final_model_feature_version": "rich96_envelope",
+  "final_model_epochs": 20,
+  "nested_tuned_plant_level_out_of_fold_metrics": {
+    "unit": "plant; argmax of mean nested outer-fold event probabilities",
+    "n_plants": 63,
+    "accuracy": 0.6507936507936508,
+    "macro_f1": 0.6398128898128899,
+    "balanced_accuracy": 0.6392857142857142,
+    "confusion_matrix_labels": [
+      "dry",
+      "cut"
+    ],
+    "confusion_matrix": [
+      [
+        26,
+        9
+      ],
+      [
+        13,
+        15
+      ]
+    ],
+    "bootstrap_95_ci": {
+      "method": "percentile bootstrap over plant-level out-of-fold predictions; 2000 resamples; seed 42",
+      "confidence_level": 0.95,
+      "intervals": {
+        "accuracy": [
+          0.5396825396825397,
+          0.7777777777777778
+        ],
+        "macro_f1": [
+          0.5206521739130435,
+          0.7586483074252346
+        ],
+        "balanced_accuracy": [
+          0.5261970766129032,
+          0.7607192975942976
+        ]
+      }
+    }
+  },
+  "nested_tuned_event_level_out_of_fold_metrics": {
+    "accuracy": 0.618437900128041,
+    "macro_f1": 0.6136436074848272
+  },
+  "inference_policy": "Known source plant IDs use their held-out outer-fold checkpoint; unknown IDs use the full-data checkpoint and have no independent validation estimate.",
+  "trained_utc": "2026-10-25T16:56:24.607551+00:00"
+}

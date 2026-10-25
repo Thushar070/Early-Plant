@@ -281,7 +281,7 @@ export default function SettingsPage() {
         </div>
         <div>
           <p className="font-semibold text-sage-800">PlantSense AI</p>
-          <p className="text-sm text-sage-500 mt-0.5">Early Plant Stress Detection Using Ultrasonic Signals</p>
+          <p className="text-sm text-sage-500 mt-0.5">Research prototype · sample dashboard data</p>
           <p className="text-xs text-sage-400 mt-2">Version 1.0.0 — Research & Innovation</p>
         </div>
       </div>

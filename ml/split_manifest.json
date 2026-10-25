@@ -1,0 +1,54 @@
+{
+  "files": {
+    "train": "train.csv",
+    "validation": "val.csv",
+    "test": "test.csv"
+  },
+  "row_counts": {
+    "train": 700,
+    "validation": 150,
+    "test": 150,
+    "total": 1000
+  },
+  "actual_proportions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "split_generation_seed": null,
+  "split_generation_method": "Unknown; existing CSVs preserved",
+  "training_seed": 42,
+  "class_counts": {
+    "train": {
+      "Drought": 136,
+      "Heat Stress": 131,
+      "Mechanical Damage": 148,
+      "Nutrient Deficiency": 139,
+      "Pest Infestation": 146
+    },
+    "validation": {
+      "Drought": 29,
+      "Heat Stress": 28,
+      "Mechanical Damage": 31,
+      "Nutrient Deficiency": 30,
+      "Pest Infestation": 32
+    },
+    "test": {
+      "Drought": 29,
+      "Heat Stress": 28,
+      "Mechanical Damage": 32,
+      "Nutrient Deficiency": 30,
+      "Pest Infestation": 31
+    }
+  },
+  "grouping": {
+    "reliable_plant_or_session_id_available": false,
+    "group_aware_split_claimed": false,
+    "available_metadata_fields": [
+      "Plant_Species",
+      "Timestamp",
+      "Location"
+    ],
+    "assumption": "No plant or recording-session identifier was verified; species and location span all splits."
+  }
+}

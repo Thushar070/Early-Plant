@@ -71,17 +71,17 @@ export default function DashboardPage() {
               </span>
               <div>
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-terracotta-200 text-terracotta-700 uppercase tracking-wider mb-1">
-                  Stress Detected
+                  Sample Alert
                 </span>
                 <h3 className="text-lg font-bold text-sage-900">
-                  Drought stress detected in Tomato Plant 04
+                  Example: drought-stress label for Tomato Plant 04
                 </h3>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-sage-700 bg-white/70 px-3.5 py-2 rounded-lg border border-terracotta-100">
               <div>
-                <span className="text-sage-500 font-medium">Confidence: </span>
+                <span className="text-sage-500 font-medium">Example confidence: </span>
                 <span className="font-bold text-sage-800">87%</span>
               </div>
               <span className="text-sage-300 hidden sm:inline">•</span>

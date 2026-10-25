@@ -1,0 +1,18 @@
+{
+  "final_config": {
+    "name": "welch_mlp_128_slow",
+    "feature_version": "welch32",
+    "hidden": 128,
+    "dropout": 0.35,
+    "lr": 0.0004,
+    "weight_decay": 0.01,
+    "inner_plant_macro_f1": 0.7650611071171819,
+    "inner_best_epochs": [
+      21,
+      2,
+      2
+    ]
+  },
+  "final_epochs": 2,
+  "device_used": "NVIDIA GeForce RTX 3050 A Laptop GPU"
+}

@@ -1,0 +1,20 @@
+{
+  "species": "tomato",
+  "n_plants": 107,
+  "baseline_run": "tomato_dry_vs_cut_20261025_161052_utc",
+  "candidate_run": "tomato_dry_vs_cut_gpu_20261025_165430_utc",
+  "baseline_plant_macro_f1": 0.7610113463772,
+  "candidate_plant_macro_f1": 0.7429785661492978,
+  "paired_bootstrap": {
+    "repetitions": 20000,
+    "seed": 42,
+    "delta_macro_f1_candidate_minus_logistic": -0.018032780227902223,
+    "percentile_95_interval": [
+      -0.09900637687504668,
+      0.062165530875554514
+    ],
+    "interpretation": "Plant-resampled paired interval; sampling uncertainty only, not analyst model-selection uncertainty."
+  },
+  "fold_grouping_matches": true,
+  "caveat": "Nested OOF predictions are plant-grouped and compared on identical folds. Results remain exploratory because the dataset and folds have been used for prior model iteration."
+}

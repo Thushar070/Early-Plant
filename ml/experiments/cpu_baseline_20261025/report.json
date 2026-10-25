@@ -1,0 +1,62 @@
+{
+  "experiment": "CPU handcrafted log-band spectral baselines",
+  "created_utc": "2026-10-25T15:24:19.618785+00:00",
+  "seed": 42,
+  "selection_metric": "validation macro F1, then balanced accuracy, then accuracy",
+  "test_set_used": false,
+  "validation_metrics": [
+    {
+      "model": "majority_baseline",
+      "accuracy": 0.20666666666666667,
+      "macro_f1": 0.06850828729281769,
+      "balanced_accuracy": 0.2
+    },
+    {
+      "model": "linear_svc_c1",
+      "accuracy": 0.18,
+      "macro_f1": 0.17584637584637583,
+      "balanced_accuracy": 0.17763805021452406
+    },
+    {
+      "model": "rbf_svc_c1",
+      "accuracy": 0.19333333333333333,
+      "macro_f1": 0.19552386315344605,
+      "balanced_accuracy": 0.19461279728799194
+    },
+    {
+      "model": "extra_trees_balanced",
+      "accuracy": 0.21333333333333335,
+      "macro_f1": 0.21228534420168113,
+      "balanced_accuracy": 0.21354798982996984
+    }
+  ],
+  "selected_model": "extra_trees_balanced",
+  "selected_model_validation": {
+    "model": "extra_trees_balanced",
+    "accuracy": 0.21333333333333335,
+    "macro_f1": 0.21228534420168113,
+    "balanced_accuracy": 0.21354798982996984
+  },
+  "data": {
+    "train_rows": 700,
+    "validation_rows": 150,
+    "classes": [
+      "Drought",
+      "Heat Stress",
+      "Mechanical Damage",
+      "Nutrient Deficiency",
+      "Pest Infestation"
+    ],
+    "sample_rate_hz": 22050,
+    "duration_seconds": 2,
+    "input_nyquist_hz": 11025,
+    "plant_or_session_group_ids_verified": false
+  },
+  "environment": {
+    "python": "3.14.7",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.1"
+  },
+  "interpretation": "Exploratory baseline only. Validation partitions lack verified plant/session grouping; labels and recording provenance are unverified. The pre-existing test partition was already examined during exploratory analysis and is not a pristine confirmatory holdout. No test metrics are reported."
+}

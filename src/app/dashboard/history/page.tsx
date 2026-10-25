@@ -102,7 +102,7 @@ export default function HistoryPage() {
                 }}
                 labelStyle={{ color: '#3d4934', fontWeight: 600 }}
                 itemStyle={{ color: '#5d704d', fontWeight: 500 }}
-                formatter={(value: number) => [`${value} / 100`, 'Health Score']}
+                formatter={(value: number) => [`${value} / 100`, 'Sample Health Score']}
               />
               <Area
                 isAnimationActive={false}
@@ -139,7 +139,7 @@ export default function HistoryPage() {
                 <th className="text-left px-5 py-3 text-xs font-semibold text-sage-500 uppercase tracking-wider">Plant</th>
                 <th className="text-left px-5 py-3 text-xs font-semibold text-sage-500 uppercase tracking-wider">Stress Type</th>
                 <th className="text-left px-5 py-3 text-xs font-semibold text-sage-500 uppercase tracking-wider">Severity</th>
-                <th className="text-left px-5 py-3 text-xs font-semibold text-sage-500 uppercase tracking-wider">Confidence</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold text-sage-500 uppercase tracking-wider">Example Confidence</th>
               </tr>
             </thead>
             <tbody>

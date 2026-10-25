@@ -1,0 +1,87 @@
+{
+  "species": "tomato",
+  "source_model_run": "tomato_dry_vs_cut_gpu_20261025_164544_utc",
+  "methods": {
+    "event_majority_vote": {
+      "n_plants": 107,
+      "accuracy": 0.7476635514018691,
+      "macro_f1": 0.7261351786899233,
+      "balanced_accuracy": 0.7203851744186047,
+      "confusion_matrix_labels": [
+        "dry",
+        "cut"
+      ],
+      "confusion_matrix": [
+        [
+          55,
+          9
+        ],
+        [
+          18,
+          25
+        ]
+      ],
+      "bootstrap_95_ci": {
+        "method": "percentile bootstrap over plant-level out-of-fold predictions; 2000 resamples; seed 42",
+        "confidence_level": 0.95,
+        "intervals": {
+          "accuracy": [
+            0.6635514018691588,
+            0.8226635514018679
+          ],
+          "macro_f1": [
+            0.6306322674418605,
+            0.8093764650726676
+          ],
+          "balanced_accuracy": [
+            0.6298994617285779,
+            0.8045394938279563
+          ]
+        }
+      }
+    },
+    "mean_event_probability": {
+      "n_plants": 107,
+      "accuracy": 0.7663551401869159,
+      "macro_f1": 0.7539777430332015,
+      "balanced_accuracy": 0.7512718023255813,
+      "confusion_matrix_labels": [
+        "dry",
+        "cut"
+      ],
+      "confusion_matrix": [
+        [
+          53,
+          11
+        ],
+        [
+          14,
+          29
+        ]
+      ],
+      "bootstrap_95_ci": {
+        "method": "percentile bootstrap over plant-level out-of-fold predictions; 2000 resamples; seed 42",
+        "confidence_level": 0.95,
+        "intervals": {
+          "accuracy": [
+            0.6822429906542056,
+            0.8411214953271028
+          ],
+          "macro_f1": [
+            0.6652719643081522,
+            0.8353978333490955
+          ],
+          "balanced_accuracy": [
+            0.6646171606809904,
+            0.8344475721323013
+          ]
+        }
+      }
+    }
+  },
+  "event_level": {
+    "accuracy": 0.7063978965819456,
+    "macro_f1": 0.6575323441923807
+  },
+  "caveat": "Aggregation comparison reuses the nested outer-fold predictions and is exploratory; it does not establish a new independent performance estimate."
+}

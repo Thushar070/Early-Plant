@@ -13,7 +13,7 @@ export default function MonitoringPage() {
   const [signalEvents, setSignalEvents] = useState([
     { time: '10:44:32 AM', event: 'Acoustic burst detected — elevated amplitude', type: 'warning' as const },
     { time: '10:44:28 AM', event: 'Normal signal received', type: 'normal' as const },
-    { time: '10:44:21 AM', event: 'Frequency shift observed at 60 kHz', type: 'warning' as const },
+    { time: '10:44:21 AM', event: 'Illustrative frequency shift event', type: 'warning' as const },
     { time: '10:44:15 AM', event: 'Normal signal received', type: 'normal' as const },
     { time: '10:44:08 AM', event: 'Baseline calibration complete', type: 'normal' as const },
   ]);
@@ -66,8 +66,8 @@ export default function MonitoringPage() {
             <Activity className="w-5 h-5 text-sage-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-sage-800">Live Monitoring</h1>
-            <p className="text-sage-500 text-sm">Real-time ultrasonic signal analysis</p>
+            <h1 className="text-2xl font-bold text-sage-800">Monitoring Demo</h1>
+            <p className="text-sage-500 text-sm">Simulated display using illustrative sample data</p>
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export default function MonitoringPage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-mint-500" />
           </span>
-          <span className="text-sm font-medium text-mint-600">Monitoring Active</span>
+          <span className="text-sm font-medium text-mint-600">Simulation Running</span>
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export default function MonitoringPage() {
               <Radio className="w-4 h-4 text-sage-600" />
             </div>
             <div>
-              <p className="text-xs text-sage-500">Connected Device</p>
+              <p className="text-xs text-sage-500">Sample device label</p>
               <p className="font-medium text-sage-800 text-sm">{device.name}</p>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function MonitoringPage() {
               <Wifi className="w-4 h-4 text-mint-500" />
             </div>
             <div>
-              <p className="text-xs text-sage-500">Plants Connected</p>
+              <p className="text-xs text-sage-500">Sample plant count</p>
               <p className="font-medium text-sage-800 text-sm">{device.plantsConnected}</p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function MonitoringPage() {
               <Signal className="w-4 h-4 text-warm-500" />
             </div>
             <div>
-              <p className="text-xs text-sage-500">Last Signal</p>
+              <p className="text-xs text-sage-500">Simulated event timer</p>
               <p className="font-medium text-sage-800 text-sm">{lastSignal} second{lastSignal !== 1 ? 's' : ''} ago</p>
             </div>
           </div>
@@ -118,14 +118,14 @@ export default function MonitoringPage() {
       <div className="bg-white rounded-xl border border-sage-200 p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <p className="text-xs tracking-wider uppercase font-semibold text-sage-500">
-            Ultrasonic Activity
+            Illustrative Waveform
           </p>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
               <span className="animate-signal absolute inline-flex h-full w-full rounded-full bg-sage-400" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-sage-500" />
             </span>
-            <span className="text-xs text-sage-400">Live</span>
+            <span className="text-xs text-sage-400">Generated demo</span>
           </div>
         </div>
         <WaveformChart height={280} stressLevel="elevated" animated />
@@ -149,7 +149,7 @@ export default function MonitoringPage() {
         {/* Frequency Activity */}
         <div className="bg-white rounded-xl border border-sage-200 p-6 shadow-sm">
           <p className="text-xs tracking-wider uppercase font-semibold text-sage-500 mb-4">
-            Frequency Activity
+            Illustrative Frequency Bins
           </p>
           <div className="flex items-end gap-2 h-40">
             {frequencyData.map((d, i) => (

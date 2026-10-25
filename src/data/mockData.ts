@@ -33,7 +33,7 @@ export const plants: Plant[] = [
         'The plant is showing an acoustic pattern associated with water stress. This may indicate insufficient water supply or root zone moisture deficit.',
     },
     observations: [
-      { time: '10:42 AM', message: 'Elevated ultrasonic activity detected', type: 'alert' },
+      { time: '10:42 AM', message: 'Elevated sample acoustic activity', type: 'alert' },
       { time: '10:35 AM', message: 'Acoustic pattern changed', type: 'warning' },
       { time: '10:20 AM', message: 'Normal activity', type: 'normal' },
     ],
@@ -47,7 +47,7 @@ export const plants: Plant[] = [
     lastMonitored: '5 min ago',
     icon: '🍅',
     observations: [
-      { time: '10:40 AM', message: 'Normal ultrasonic activity', type: 'normal' },
+      { time: '10:40 AM', message: 'Normal sample acoustic activity', type: 'normal' },
       { time: '10:20 AM', message: 'Routine monitoring check — no anomalies', type: 'normal' },
     ],
   },
@@ -72,7 +72,7 @@ export const plants: Plant[] = [
         'The plant is showing an acoustic pattern that may be associated with heat-related stress. Elevated temperatures can cause cavitation events in xylem vessels.',
     },
     observations: [
-      { time: '9:55 AM', message: 'Moderate ultrasonic activity increase', type: 'warning' },
+      { time: '9:55 AM', message: 'Moderate sample acoustic activity increase', type: 'warning' },
       { time: '9:40 AM', message: 'Temperature-correlated acoustic pattern', type: 'warning' },
       { time: '9:20 AM', message: 'Normal activity', type: 'normal' },
     ],
@@ -100,7 +100,7 @@ export const plants: Plant[] = [
     observations: [
       { time: '10:30 AM', message: 'Persistent elevated acoustic activity', type: 'alert' },
       { time: '10:00 AM', message: 'Unusual emission pattern detected', type: 'warning' },
-      { time: '9:30 AM', message: 'Slight increase in ultrasonic activity', type: 'warning' },
+      { time: '9:30 AM', message: 'Slight increase in sample acoustic activity', type: 'warning' },
     ],
   },
   {
@@ -112,7 +112,7 @@ export const plants: Plant[] = [
     lastMonitored: '6 min ago',
     icon: '🌽',
     observations: [
-      { time: '10:38 AM', message: 'Normal ultrasonic activity', type: 'normal' },
+      { time: '10:38 AM', message: 'Normal sample acoustic activity', type: 'normal' },
       { time: '10:15 AM', message: 'Routine check — healthy baseline', type: 'normal' },
     ],
   },
@@ -125,7 +125,7 @@ export const plants: Plant[] = [
     lastMonitored: '4 min ago',
     icon: '🫑',
     observations: [
-      { time: '10:41 AM', message: 'Normal ultrasonic activity', type: 'normal' },
+      { time: '10:41 AM', message: 'Normal sample acoustic activity', type: 'normal' },
     ],
   },
   {
@@ -137,7 +137,7 @@ export const plants: Plant[] = [
     lastMonitored: '7 min ago',
     icon: '🥬',
     observations: [
-      { time: '10:36 AM', message: 'Normal ultrasonic activity', type: 'normal' },
+      { time: '10:36 AM', message: 'Normal sample acoustic activity', type: 'normal' },
     ],
   },
   {
@@ -161,7 +161,7 @@ export const plants: Plant[] = [
         'The acoustic emission pattern is consistent with mechanical damage caused by pest activity. The high frequency of emissions suggests active damage.',
     },
     observations: [
-      { time: '10:43 AM', message: 'Critical: rapid burst ultrasonic emissions', type: 'alert' },
+      { time: '10:43 AM', message: 'Example: rapid burst acoustic emissions', type: 'alert' },
       { time: '10:30 AM', message: 'Highly irregular acoustic pattern', type: 'alert' },
       { time: '10:15 AM', message: 'Increasing emission frequency', type: 'warning' },
       { time: '10:00 AM', message: 'Unusual acoustic pattern detected', type: 'warning' },
@@ -188,7 +188,7 @@ export const plants: Plant[] = [
     lastMonitored: '11 min ago',
     icon: '🥕',
     observations: [
-      { time: '10:33 AM', message: 'Normal ultrasonic activity', type: 'normal' },
+      { time: '10:33 AM', message: 'Normal sample acoustic activity', type: 'normal' },
     ],
   },
 ];
@@ -343,7 +343,7 @@ export const healthData30d: HealthDataPoint[] = [
 
 export const monitoringDevice: MonitoringDevice = {
   id: 'node-01',
-  name: 'PlantSense Node 01',
+  name: 'Demo monitor label',
   status: 'connected',
   plantsConnected: 8,
   lastSignal: '3 seconds ago',
@@ -402,32 +402,32 @@ export const stressTypes: StressTypeInfo[] = [
 export const howItWorksSteps: HowItWorksStep[] = [
   {
     step: 1,
-    title: 'Plant emits ultrasonic signals',
-    description: 'Plants naturally emit ultrasonic acoustic signals when experiencing stress, inaudible to human ears.',
+    title: 'Plant-related audio is recorded',
+    description: 'The prototype explores whether recorded acoustic signals may contain patterns associated with plant stress.',
     icon: 'sprout',
   },
   {
     step: 2,
     title: 'Sensor captures the acoustic signal',
-    description: 'Non-invasive acoustic sensors placed near the plants record high-frequency ultrasonic emissions.',
+    description: 'This dashboard uses sample data; no physical sensor or live recording is connected.',
     icon: 'radio',
   },
   {
     step: 3,
     title: 'AI analyzes the signal',
-    description: 'Signal processing algorithms analyze acoustic frequencies and temporal patterns against calibrated baselines.',
+    description: 'ML experiments transform recordings into features such as log-Mel spectrograms.',
     icon: 'brain',
   },
   {
     step: 4,
     title: 'Stress pattern is classified',
-    description: 'Identifies specific stress conditions such as drought, elevated temperature, or mechanical disturbance.',
+    description: 'Research experiments compare five target classes, with low recorded validation performance.',
     icon: 'scan-search',
   },
   {
     step: 5,
     title: 'User receives an alert and suggested action',
-    description: 'Farmers receive plain-language notifications with practical recommended actions before visible symptoms occur.',
+    description: 'The prototype dashboard displays illustrative sample alerts and recommendations, not verified predictions.',
     icon: 'bell-ring',
   },
 ];
@@ -447,13 +447,13 @@ export function generateWaveformData(points: number = 100): number[] {
 
 export function generateFrequencyData(): { freq: string; value: number }[] {
   return [
-    { freq: '20 kHz', value: 25 },
-    { freq: '40 kHz', value: 45 },
-    { freq: '60 kHz', value: 72 },
-    { freq: '80 kHz', value: 58 },
-    { freq: '100 kHz', value: 38 },
-    { freq: '120 kHz', value: 22 },
-    { freq: '140 kHz', value: 15 },
-    { freq: '160 kHz', value: 8 },
+    { freq: 'Bin 1', value: 25 },
+    { freq: 'Bin 2', value: 45 },
+    { freq: 'Bin 3', value: 72 },
+    { freq: 'Bin 4', value: 58 },
+    { freq: 'Bin 5', value: 38 },
+    { freq: 'Bin 6', value: 22 },
+    { freq: 'Bin 7', value: 15 },
+    { freq: 'Bin 8', value: 8 },
   ];
 }

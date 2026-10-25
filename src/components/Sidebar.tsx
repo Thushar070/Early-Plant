@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, Leaf, Activity, Bell, Clock, Settings, Sprout, LogOut, Info } from 'lucide-react';
+import { LayoutDashboard, Leaf, Activity, Bell, Clock, Settings, Sprout, LogOut, Info, FlaskConical } from 'lucide-react';
 import { useApp } from './AppProvider';
 
 const navItems = [
@@ -11,6 +11,7 @@ const navItems = [
   { name: 'Monitoring', href: '/dashboard/monitoring', icon: Activity },
   { name: 'Alerts', href: '/dashboard/alerts', icon: Bell },
   { name: 'History', href: '/dashboard/history', icon: Clock },
+  { name: 'Research', href: '/dashboard/research', icon: FlaskConical },
   { name: 'Settings', href: '/dashboard/settings', icon: Settings },
 ];
 

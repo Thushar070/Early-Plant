@@ -1,0 +1,550 @@
+{
+  "task": "dry versus cut acoustic event classification",
+  "species": "tomato",
+  "source_doi": "10.5061/dryad.jwstqjqf7",
+  "source_archive_sha256": "5134d53a9d5e8d225bfa1c31d13d0c7f9da09b4c9edb9749168aa9a2ef0a1b63",
+  "metadata_csv_sha256": "e0ffdae6513bf2341881c350ac139a35eb1e55019ffbb557802506378fd0479a",
+  "evaluation_status": "Exploratory nested model development on previously inspected plant cohorts. Outer folds were excluded from each fold's hyperparameter and feature selection, but repeated analyst iteration on this dataset means results are not independent confirmation. Validate a frozen pipeline on new plants, sites, and acquisition sessions.",
+  "class_names": [
+    "dry",
+    "cut"
+  ],
+  "n_events": 2282,
+  "n_unique_plants": 107,
+  "grouping_key": "source README plant ID; all events per plant held out together",
+  "split_method": "Nested StratifiedGroupKFold: outer=5, inner=3; outer random_state=42; inner random_state=733",
+  "selection_metric": "inner plant-level macro-F1 after majority vote over each plant's held-out events",
+  "candidate_search": "Welch32 and rich96_envelope features; tuned logistic regression, RBF SVC, ExtraTrees, RandomForest, histogram gradient boosting, and gradient boosting. Events weighted inversely by event count per plant during fitting.",
+  "outer_fold_details": [
+    {
+      "fold": 1,
+      "train_plant_count": 86,
+      "validation_plant_count": 21,
+      "selected_config": {
+        "name": "logistic_c10",
+        "feature_version": "welch32",
+        "family": "logistic",
+        "params": {
+          "C": 10.0
+        },
+        "inner_plant_macro_f1": 0.7611111111111111
+      },
+      "top_inner_candidates": [
+        {
+          "name": "logistic_c10",
+          "feature_version": "welch32",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.7611111111111111
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "rich96_envelope",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.6868347338935574
+        },
+        {
+          "name": "logistic_c10",
+          "feature_version": "rich96_envelope",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.6808247422680412
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "welch32",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.6721407624633431
+        },
+        {
+          "name": "hist_gradient_100",
+          "feature_version": "rich96_envelope",
+          "family": "hist_gradient",
+          "params": {
+            "max_iter": 100
+          },
+          "inner_plant_macro_f1": 0.6351809954751131
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "train_plant_count": 84,
+      "validation_plant_count": 23,
+      "selected_config": {
+        "name": "rbf_svc_c30",
+        "feature_version": "rich96_envelope",
+        "family": "rbf_svc",
+        "params": {
+          "C": 30.0
+        },
+        "inner_plant_macro_f1": 0.8530612244897959
+      },
+      "top_inner_candidates": [
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "rich96_envelope",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.8530612244897959
+        },
+        {
+          "name": "logistic_c10",
+          "feature_version": "rich96_envelope",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.8183129055515501
+        },
+        {
+          "name": "hist_gradient_100",
+          "feature_version": "rich96_envelope",
+          "family": "hist_gradient",
+          "params": {
+            "max_iter": 100
+          },
+          "inner_plant_macro_f1": 0.761613144137416
+        },
+        {
+          "name": "logistic_c10",
+          "feature_version": "welch32",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.7482517482517483
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "welch32",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.6676810712111991
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "train_plant_count": 87,
+      "validation_plant_count": 20,
+      "selected_config": {
+        "name": "rbf_svc_c30",
+        "feature_version": "welch32",
+        "family": "rbf_svc",
+        "params": {
+          "C": 30.0
+        },
+        "inner_plant_macro_f1": 0.7344617092119867
+      },
+      "top_inner_candidates": [
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "welch32",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.7344617092119867
+        },
+        {
+          "name": "hist_gradient_100",
+          "feature_version": "rich96_envelope",
+          "family": "hist_gradient",
+          "params": {
+            "max_iter": 100
+          },
+          "inner_plant_macro_f1": 0.7238095238095238
+        },
+        {
+          "name": "logistic_c10",
+          "feature_version": "welch32",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.7211538461538461
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "rich96_envelope",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.7156862745098038
+        },
+        {
+          "name": "hist_gradient_100",
+          "feature_version": "welch32",
+          "family": "hist_gradient",
+          "params": {
+            "max_iter": 100
+          },
+          "inner_plant_macro_f1": 0.7103218645948945
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "train_plant_count": 86,
+      "validation_plant_count": 21,
+      "selected_config": {
+        "name": "logistic_c10",
+        "feature_version": "welch32",
+        "family": "logistic",
+        "params": {
+          "C": 10.0
+        },
+        "inner_plant_macro_f1": 0.7896739130434782
+      },
+      "top_inner_candidates": [
+        {
+          "name": "logistic_c10",
+          "feature_version": "welch32",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.7896739130434782
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "welch32",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.7263041372630413
+        },
+        {
+          "name": "logistic_c10",
+          "feature_version": "rich96_envelope",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.718494271685761
+        },
+        {
+          "name": "hist_gradient_100",
+          "feature_version": "welch32",
+          "family": "hist_gradient",
+          "params": {
+            "max_iter": 100
+          },
+          "inner_plant_macro_f1": 0.70446735395189
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "rich96_envelope",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.6838235294117647
+        }
+      ]
+    },
+    {
+      "fold": 5,
+      "train_plant_count": 85,
+      "validation_plant_count": 22,
+      "selected_config": {
+        "name": "logistic_c10",
+        "feature_version": "rich96_envelope",
+        "family": "logistic",
+        "params": {
+          "C": 10.0
+        },
+        "inner_plant_macro_f1": 0.8096304591265397
+      },
+      "top_inner_candidates": [
+        {
+          "name": "logistic_c10",
+          "feature_version": "rich96_envelope",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.8096304591265397
+        },
+        {
+          "name": "logistic_c10",
+          "feature_version": "welch32",
+          "family": "logistic",
+          "params": {
+            "C": 10.0
+          },
+          "inner_plant_macro_f1": 0.7494736842105263
+        },
+        {
+          "name": "hist_gradient_100",
+          "feature_version": "welch32",
+          "family": "hist_gradient",
+          "params": {
+            "max_iter": 100
+          },
+          "inner_plant_macro_f1": 0.7059708226801023
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "welch32",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.7058823529411764
+        },
+        {
+          "name": "rbf_svc_c30",
+          "feature_version": "rich96_envelope",
+          "family": "rbf_svc",
+          "params": {
+            "C": 30.0
+          },
+          "inner_plant_macro_f1": 0.6867913832199546
+        }
+      ]
+    }
+  ],
+  "fold_heldout_plant_ids": {
+    "1": [
+      "109",
+      "111",
+      "113",
+      "121",
+      "131",
+      "14",
+      "141",
+      "181",
+      "185",
+      "195",
+      "201",
+      "207",
+      "235",
+      "25",
+      "27",
+      "28",
+      "33",
+      "41",
+      "68",
+      "85",
+      "93"
+    ],
+    "2": [
+      "103",
+      "117",
+      "119",
+      "127",
+      "129",
+      "139",
+      "197",
+      "199",
+      "205",
+      "216",
+      "220",
+      "229",
+      "26",
+      "35",
+      "39",
+      "45",
+      "46",
+      "65",
+      "7",
+      "79",
+      "87",
+      "95",
+      "99"
+    ],
+    "3": [
+      "102",
+      "107",
+      "133",
+      "17",
+      "179",
+      "183",
+      "19",
+      "203",
+      "213",
+      "215",
+      "217",
+      "31",
+      "32",
+      "34",
+      "52",
+      "53",
+      "56",
+      "71",
+      "8",
+      "81"
+    ],
+    "4": [
+      "1",
+      "10",
+      "101",
+      "115",
+      "13",
+      "177",
+      "2",
+      "209",
+      "21",
+      "211",
+      "218",
+      "219",
+      "222",
+      "231",
+      "233",
+      "37",
+      "44",
+      "58",
+      "6",
+      "75",
+      "9"
+    ],
+    "5": [
+      "105",
+      "123",
+      "125",
+      "135",
+      "136",
+      "137",
+      "175",
+      "191",
+      "193",
+      "23",
+      "237",
+      "239",
+      "4",
+      "43",
+      "5",
+      "50",
+      "67",
+      "69",
+      "73",
+      "76",
+      "77",
+      "97"
+    ]
+  },
+  "fold_feature_version": {
+    "1": "welch32",
+    "2": "rich96_envelope",
+    "3": "welch32",
+    "4": "welch32",
+    "5": "rich96_envelope"
+  },
+  "final_model_config": {
+    "family": "logistic",
+    "feature_version": "welch32",
+    "inner_plant_macro_f1": 0.7611111111111111,
+    "name": "logistic_c10",
+    "params": {
+      "C": 10.0
+    }
+  },
+  "final_model_feature_version": "welch32",
+  "final_model_selection": "Modal inner-CV-selected configuration among outer training folds, refit on all source plants; outer performance is the nested OOF procedure, not the full-data checkpoint's independent test score.",
+  "nested_tuned_plant_level_out_of_fold_metrics": {
+    "unit": "plant; majority vote over nested outer-fold event predictions",
+    "n_plants": 107,
+    "accuracy": 0.7476635514018691,
+    "macro_f1": 0.741892254087376,
+    "balanced_accuracy": 0.747093023255814,
+    "confusion_matrix_labels": [
+      "dry",
+      "cut"
+    ],
+    "confusion_matrix": [
+      [
+        48,
+        16
+      ],
+      [
+        11,
+        32
+      ]
+    ],
+    "bootstrap_95_ci": {
+      "method": "percentile bootstrap over plant-level out-of-fold predictions; 2000 resamples; seed 42",
+      "confidence_level": 0.95,
+      "intervals": {
+        "accuracy": [
+          0.6635514018691588,
+          0.822429906542056
+        ],
+        "macro_f1": [
+          0.6548387096774193,
+          0.8208652744735219
+        ],
+        "balanced_accuracy": [
+          0.661501445353176,
+          0.8284965437788018
+        ]
+      }
+    }
+  },
+  "matched_baseline_plant_level_out_of_fold_metrics": {
+    "unit": "same outer folds; existing Welch32 + weighted logistic regression baseline",
+    "n_plants": 107,
+    "accuracy": 0.7663551401869159,
+    "macro_f1": 0.7622856127254954,
+    "balanced_accuracy": 0.7703488372093024,
+    "confusion_matrix_labels": [
+      "dry",
+      "cut"
+    ],
+    "confusion_matrix": [
+      [
+        48,
+        16
+      ],
+      [
+        9,
+        34
+      ]
+    ],
+    "bootstrap_95_ci": {
+      "method": "percentile bootstrap over plant-level out-of-fold predictions; 2000 resamples; seed 42",
+      "confidence_level": 0.95,
+      "intervals": {
+        "accuracy": [
+          0.6822429906542056,
+          0.8504672897196262
+        ],
+        "macro_f1": [
+          0.6752197137066694,
+          0.8411392820385297
+        ],
+        "balanced_accuracy": [
+          0.6822330447330448,
+          0.8512544440853265
+        ]
+      }
+    }
+  },
+  "nested_tuned_event_level_out_of_fold_metrics": {
+    "accuracy": 0.6744084136722174,
+    "macro_f1": 0.6286564622311852
+  },
+  "matched_baseline_event_level_out_of_fold_metrics": {
+    "accuracy": 0.6647677475898335,
+    "macro_f1": 0.633452909996252
+  },
+  "inference_policy": "Known source plant IDs use their selected outer-fold model; unknown IDs use the full-data checkpoint and have no independent validation estimate.",
+  "trained_utc": "2026-10-25T17:06:27.201484+00:00"
+}
