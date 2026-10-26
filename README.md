@@ -1,23 +1,25 @@
 # PlantSense AI
 
-PlantSense AI is a research prototype exploring whether recorded plant-associated sounds can distinguish known recording conditions. It is not a validated plant-health or stress diagnosis system.
+PlantSense AI is an ongoing student research project exploring whether machine learning can identify plant-stress conditions from recorded sounds. Current work compares the initial five-class dataset with a narrower benchmark built from published plant-acoustic recordings. The project is still exploratory; it is not a validated plant-health diagnosis system.
 
-## Data and task
+## Datasets under study
 
-The repository contains two separate experiments:
+The project started with the [Mendeley Data dataset *Audio signals from stressed plants*](https://data.mendeley.com/datasets/rjmc7rrvdx/1) (DOI: [10.17632/rjmc7rrvdx.1](https://doi.org/10.17632/rjmc7rrvdx.1), published 22 October 2024, CC BY 4.0). Its description covers plant audio recordings and accompanying stress and environmental metadata. The local project copy contains 1,000 two-second, 22.05 kHz WAV recordings across five labels: drought, heat stress, mechanical damage, nutrient deficiency, and pest infestation.
+
+A second, complementary dataset is [Dryad PlantSounds](https://datadryad.org/dataset/doi:10.5061/dryad.jwstqjqf7):
 
 | Dataset | Scope | Evaluation |
 |---|---|---|
-| Original local dataset | 1,000 two-second, 22.05 kHz recordings labelled across five categories: drought, heat stress, mechanical damage, nutrient deficiency, and pest infestation. Label provenance and plant/session IDs are unverified. | Existing train/validation partitions; not plant- or session-grouped. Used only for exploratory diagnostics. |
-| [Dryad PlantSounds](https://datadryad.org/dataset/doi:10.5061/dryad.jwstqjqf7) | Source archive has 5,477 short WAV events at 500 kHz, including controls. The modeled task uses dry-versus-cut events separately for tomato (2,282 events; 107 plants) and tobacco (781 events; 63 plants). | Five-fold stratified cross-validation grouped by plant ID. Session IDs are unavailable. |
+| Mendeley: five stress labels | Initial project dataset; five-category classification. | Existing train/validation partitions; not plant- or session-grouped. Results are exploratory. |
+| Dryad PlantSounds | Source archive has 5,477 short WAV events at 500 kHz, including controls. The current modeled task uses dry-versus-cut events separately for tomato (2,282 events; 107 plants) and tobacco (781 events; 63 plants). | Five-fold stratified cross-validation grouped by plant ID. Session IDs are unavailable. |
 
-The PlantSounds classification target is **dry vs. cut within a species**. It does not represent healthy-vs-stressed classification. The two datasets and their scores are not directly comparable.
+The PlantSounds classification target is **dry vs. cut within a species**. It complements the original Mendeley five-class task but does not represent healthy-vs-stressed classification. Results across the two datasets are not directly comparable.
 
-## Approaches tried
+## Experiments so far
 
 ### Original five-class experiment
 
-Validation results below are the best logged epoch for neural approaches, or the reported validation result for the classical baseline. All use the original non-grouped split; the labels and provenance are unverified.
+Validation results below are the best logged epoch for neural approaches, or the reported validation result for the classical baseline. All use the same existing split, which does not keep plants or recording sessions separate between partitions.
 
 | Approach | Validation accuracy | Validation macro-F1 |
 |---|---:|---:|
@@ -53,12 +55,12 @@ Further model comparisons:
 
 GPU tuning used five outer plant folds and three inner plant folds. The additional CPU search was run for tomato only. Neural models and pretrained AST/PANNs approaches were explored on the original five-class dataset; they do not have directly comparable plant-grouped PlantSounds scores.
 
-## Interpretation
+## Current findings and next steps
 
-- The strongest PlantSounds results are exploratory cross-validation estimates on cohorts repeatedly used during model development, not independent confirmation.
-- Plant grouping reduces leakage between recordings from the same plant, but the source has no session IDs and does not establish generalization to new sites, sensors, or acquisition sessions.
-- The original five-class dataset has unverified labels and non-grouped partitions; its scores are near chance.
-- Validate a frozen pipeline on newly collected plants and sessions before making broader performance claims. The current research target is not a general plant-stress diagnosis.
+- On the initial Mendeley dataset, the five-class models are near the 20% chance-accuracy level. The next step is to improve the signal and evaluation pipeline, not to claim reliable classification.
+- On PlantSounds, grouped evaluation provides a better test of performance on unseen plants. The GPU and expanded CPU searches have not improved on the spectral logistic-regression baseline so far.
+- These results are still exploratory: plant cohorts have been revisited during model development, and PlantSounds does not provide session IDs. Further work should test a frozen approach on newly recorded plants and sessions.
+- The long-term goal remains studying plant-stress acoustics; the current PlantSounds model only separates dry and cut conditions within each species.
 
 ## Project notes
 
